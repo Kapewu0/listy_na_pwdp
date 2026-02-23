@@ -6,6 +6,5 @@ int main() {
     std::cout << "Podaj nazwisko \n";
     std::cin >> surname;
     std::cout << name << " " << surname << "\n";
-    std::getchar();
     return 0;
 }
