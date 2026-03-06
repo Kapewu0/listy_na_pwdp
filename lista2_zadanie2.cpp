@@ -17,11 +17,11 @@
 
     Odpowiedź na pytania
     Każdy znak zajmuje 1 bajt, natomiast wypisanie napisu zwraca liczbę znaków powiększoną o 1. Polskie litery (tj.ą, ę, ć itd.) zajmują 2 bajty.
-    Ilość zajmowanego miejsca w pamięci w przypadku uprzednio zadeklarowanych zmiennych jest stała i wynosi 32. Jest tak najprawdopodobniej, ze względu
-    na to, że podczas wypisywania polecenia sizeof("napis") kompilator wie ile musi przeznaczyć pamięci na taki napis. W przypadku zmiennych
-    mogą one zmienić swoją wartość a co za tym idzie, mogą potrzebować więcej miejsca w pamięci, gdyby tak nie zachodziło doszłoby do zawieszenia programu
-    lub utraty części informacji zawartych w napisach.  
-
+    Wynikiem sizeof(first_string) oraz sizeof(second_string) jest 32. Jest tak ponieważ sizeof() zwraca rozmiar std::string.
+    Wywołanie np. sizeof("kot") powoduje, że każdy znak zostaje zadeklarowany jako zmienna typu char. W tym przypadku sizeof() zwraca 3 razy rozmiar zmiennej
+    char oraz dodaje do tego 1 ze względu na spsób zapisywania napisów w C++. Podsumowaując, rozmiar napisu nie wpłynie na działanie kompilatora, więc
+    sam napis nie jest przechowywany w pamięci zarządzanej przez kompilator. Kompilator wyłącznie odnosi się do tego napisu i jego właściwości tj. np. długość napisu.
+    
 */
 
 #include <iostream>
